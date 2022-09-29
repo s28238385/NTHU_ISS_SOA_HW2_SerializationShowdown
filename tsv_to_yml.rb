@@ -8,7 +8,7 @@ def print_yaml
   puts file_hashed[0].to_yaml
 end
 
-def create_yml
+def create_yaml
   file_hashed = read_tsv
   File.open(ARGV[1], 'w') do |f|
     f.puts file_hashed.to_yaml
@@ -25,4 +25,4 @@ def read_tsv
   end
 end
 
-ARGV[1].nil? ? print_yaml : create_yml
+ARGV[1].nil? ? print_yaml : create_yaml
