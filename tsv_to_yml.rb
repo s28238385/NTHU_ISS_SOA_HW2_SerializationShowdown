@@ -17,9 +17,9 @@ end
 
 def read_tsv
   file_open = CSV.table(ARGV[0], col_sep: "\t")
-  file_hashed = file_open.map { |line| line.to_hash }
+  file_hashed = file_open.map(&:to_hash)
   file_hashed.each do |hash|
-    hash.keys.each { |key| hash[key.to_s] = hash.delete(key) }
+    hash.keys.map { |key| hash[key.to_s] = hash.delete(key) }
     hash['student_id'] = hash['student_id'].to_s
     hash['tech_experience'] += "\r"
   end
