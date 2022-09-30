@@ -15,9 +15,7 @@ end
 
 def create_tsv
   file_string = read_yaml
-  File.open(ARGV[1], 'w') do |file|
-    file.puts file_string
-  end
+  File.open(ARGV[1], 'w') { |file| file.puts file_string }
 end
 
 create_tsv

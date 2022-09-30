@@ -10,9 +10,7 @@ end
 
 def create_yaml
   file_hashed = read_tsv
-  File.open(ARGV[1], 'w') do |file|
-    file.puts file_hashed.to_yaml
-  end
+  File.open(ARGV[1], 'w') { |file| file.puts file_hashed.to_yaml }
 end
 
 def read_tsv
