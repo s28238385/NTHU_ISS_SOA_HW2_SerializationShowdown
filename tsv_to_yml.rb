@@ -5,13 +5,13 @@ require 'csv'
 
 def print_yaml
   file_hashed = read_tsv
-  puts file_hashed[0].to_yaml
+  puts file_hashed.to_yaml
 end
 
 def create_yaml
   file_hashed = read_tsv
-  File.open(ARGV[1], 'w') do |f|
-    f.puts file_hashed.to_yaml
+  File.open(ARGV[1], 'w') do |file|
+    file.puts file_hashed.to_yaml
   end
 end
 
